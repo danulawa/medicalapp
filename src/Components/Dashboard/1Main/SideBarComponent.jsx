@@ -45,9 +45,9 @@ class SideBarComponent extends Component {
                     <li class = "nav-item dropdown">
    				        <a href="#labDrop" data-toggle="collapse" aria-expanded="false" class = "nav-link dropdown-toggle">Laboratory</a>
    				        <ul class="collapse list-unstyled" id="labDrop">
-   					        <li> <a class = "dropdown-item" href="#">New Lab Test</a> </li>
+   					        <li> <a class = "dropdown-item" href="/lab/add-labDetails">New Lab Test</a> </li>
                             <li> <a class = "dropdown-item" href="#">All Lab Tests</a> </li>
-                            <li> <a class = "dropdown-item" href="#">Billing</a> </li>
+                            <li> <a class = "dropdown-item" href="/lab/lab-report">Lab Report</a> </li>
    				        </ul>
    			        </li>
                     <li class = "nav-item dropdown">
@@ -65,6 +65,15 @@ class SideBarComponent extends Component {
                             <li> <a class = "dropdown-item" href="/extuser/patients">All Patients</a> </li>
                             <li> <a class = "dropdown-item" href="#">New Supplier</a> </li>
                             <li> <a class = "dropdown-item" href="#">All Suppliers</a> </li>
+   				        </ul>
+   			        </li>
+                    <li class = "nav-item dropdown">
+   				        <a href="#intDrop" data-toggle="collapse" aria-expanded="false" class = "nav-link dropdown-toggle">Internal Users</a>
+   				        <ul class="collapse list-unstyled" id="intDrop">
+                            <li> <a class = "dropdown-item" href="/intuser/add-employee">New Employee</a> </li>
+                            <li> <a class = "dropdown-item" href="/intuser/employees">All Employees</a> </li>
+   					        <li> <a class = "dropdown-item" href="#">New Doctor</a> </li>
+                            <li> <a class = "dropdown-item" href="#">All Doctors</a> </li>
    				        </ul>
    			        </li>
                 </ul>

@@ -21,7 +21,6 @@ class ListEquipmentComponent extends Component {
         else{
             return false;
          }
-        
     }
 
     editEquipment(eqId){
@@ -45,10 +44,10 @@ class ListEquipmentComponent extends Component {
     render() {
         return (
             <div>
-                <h2 className="text-center">OPD Equipment List</h2>
+                <h1 className="text-center h1C">OPD Equipment List</h1>
                 <div className = "row">
                     <div className="row1">
-                        <button className="btn btb-primary" onClick={this.addEquipment}>Add Equipment</button>                
+                        <button className="btn btb-primary buttonC" onClick={this.addEquipment}>Add Equipment</button>                
                     </div>
             </div>
             <br/>
@@ -80,9 +79,9 @@ class ListEquipmentComponent extends Component {
                                         <td>{equipment.e_IS_Date}</td>
                                         <td>{equipment.e_Ex_Date}</td>
                                         <td>
-                                            <button onClick = { () => this.editEquipment(equipment.eqId)} className = "btn btn-success">Update</button>
-                                            <button onClick = { () => this.deleteEquipment(equipment.eqId)} className = "btn btn-danger">Delete</button>
-                                            <button onClick = { () => this.printDetails(equipment.eqId)}  >Print Bill</button>
+                                            <button onClick = { () => this.editEquipment(equipment.eqId) }  className = "btn btn-success ">Update</button>
+                                            <button onClick = { () => this.deleteEquipment(equipment.eqId)} style={{marginLeft:10}}className = " btn btn-danger ">Delete</button>
+                                            <button onClick = { () => this.printDetails(equipment.eqId)} style={{width:155,backgroundColor:"#22223B",marginTop:10}} className ="btn btn-info " >Print Bill</button>
                                         </td>
                                     </tr>
                                 )

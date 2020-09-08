@@ -52,16 +52,25 @@ class UpdatePatientComponent extends Component {
 
     updatePatient = (p) => {
         p.preventDefault();
+        
         let patient = {name:this.state.name,nic:this.state.nic,address:this.state.address,
             phone:this.state.phone,email:this.state.email,gender:this.state.gender,
-            dob:this.state.dob,serveType:this.state.serveType,date:this.state.date,payment:this.state.payment}
-
-            console.log('patient =>' + JSON.stringify(patient));
+            dob:this.state.dob,serveType:this.state.serveType,date:this.state.date,payment:this.state.payment
+        };
+        
+        if(this.state.name === ''|| this.state.nic === ''|| this.state.address === ''|| this.state.gender === ''
+        || this.state.dob === ''|| this.state.serveType === ''|| this.state.payment === ''||this.state.phone === ''||this.state.email === '' 
+        || this.state.date === '' )
+        {alert("Please fill all the fields....")}
+                
+                
+        
+                else{
+                    console.log('patient =>' + JSON.stringify(patient));
             PatientService.updatePatient(patient, this.state.id).then(res =>{
-                this.props.history.push('extuser/patients');
-            });
-
-    }
+                this.props.history.push('/extuser/patients');});
+            };}
+    
 
 
     changeNameHandler= (event) =>{
@@ -96,7 +105,7 @@ class UpdatePatientComponent extends Component {
     }
 
     cancel(){
-        this.props.history.push('extuser/patients');
+        this.props.history.push('/extuser/patients');
     }
 
     render() {

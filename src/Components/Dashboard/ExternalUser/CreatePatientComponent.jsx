@@ -36,15 +36,21 @@ class CreatePatientComponent extends Component {
         p.preventDefault();
         let patient = {name:this.state.name,nic:this.state.nic,address:this.state.address,
             phone:this.state.phone,email:this.state.email,gender:this.state.gender,
-            dob:this.state.dob,serveType:this.state.serveType,date:this.state.date,payment:this.state.payment}
-            console.log('patient =>' + JSON.stringify(patient));
+            dob:this.state.dob,serveType:this.state.serveType,date:this.state.date,payment:this.state.payment};
 
-            PatientService.createPatient(patient).then(res =>{
-                this.props.history.push('/extuser/patients');
-            });
-    }
-
-
+        if(this.state.name === ''|| this.state.nic === ''|| this.state.address === ''|| this.state.gender === ''
+        || this.state.dob === ''|| this.state.serveType === ''|| this.state.phone === ''|| this.state.email === ''|| this.state.payment === ''
+        || this.state.date === '' )
+        {alert("Please fill all the fields....")}
+                  
+        else{
+            
+        console.log('patient =>' + JSON.stringify(patient));
+        PatientService.createPatient(patient).then(res =>{
+            this.props.history.push('/extuser/patients');});
+        
+        };}
+   
     changeNameHandler= (event) =>{
         this.setState({name: event.target.value});
     }

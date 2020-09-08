@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import EquipmentService from '../../../Services/EquipmentService';
 
+
+
 class PrintDetailsComponent extends Component {
     constructor(props){
         super(props)
@@ -26,9 +28,9 @@ class PrintDetailsComponent extends Component {
                     <div className="text-center">
                     <img src = {require('./logoA.jpg')} width="72" height="72" alt="logo" />
                     </div>
-                    <h1 className="text-center">OPD Equipment Details</h1>
+                    <h1 className="text-center h1C">OPD Equipment Details</h1>
                     <br></br>
-                    <table style={{width:470}} className="table table-striped table-bordered" >
+                    <table style={{width:440,marginLeft:10}} className="table table-striped table-bordered" >
                     <thead>
                      <tr>
                         <th>Name</th>
@@ -37,7 +39,7 @@ class PrintDetailsComponent extends Component {
                     </thead>
                     <tbody>
                     <tr>
-                        <td><label>Equipment Name :</label></td>
+                        <td><label >Equipment Name :</label></td>
                         <td>{ this.state.equipment.eqName }</td>
                     </tr>
                     <tr>
@@ -87,7 +89,7 @@ class PrintDetailsComponent extends Component {
                        
                         </table>
                         <br></br>
-                        <button onClick={() => window.print()} >PRINT</button>
+                        <button onClick={() => window.print()} className="buttonC">PRINT</button>
                     </div>
             </div>
 

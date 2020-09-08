@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EquipmentService from '../../../Services/EquipmentService';
+//import '../App.css';
 
 const validateForm = (formErrors) => {
     let valid = true;
@@ -10,13 +11,13 @@ const validateForm = (formErrors) => {
     return valid;
   }
   
-const countErrors = (errors) => {
+/*const countErrors = (errors) => {
     let count = 0;
     Object.values(errors).forEach(
       (val) => val.length > 0 && (count = count+1)
     );
     return count;
-  }
+  }*/
   
   
 class CreateEquipmentCompenent extends Component {
@@ -24,7 +25,7 @@ class CreateEquipmentCompenent extends Component {
         constructor(props){
           super(props)
           this.state = {
-              errorCount: '',
+             // errorCount: '',
              
               eqName: '',
               euprice: '',
@@ -57,7 +58,7 @@ class CreateEquipmentCompenent extends Component {
         handleSubmit = (e) => {
           e.preventDefault();
           
-          this.setState({errorCount: countErrors(this.state.formErrors)});
+          //this.setState({errorCount: countErrors(this.state.formErrors)});
           this.setState({formValid: validateForm(this.state.formErrors)});
           let equipment ={eqName:this.state.eqName,estorage:this.state.estorage,euprice:this.state.euprice,equantity:this.state.equantity,etrade:this.state.etrade,e_IS_Date:this.state.e_IS_Date,e_Ex_Date:this.state.e_Ex_Date}
           console.log('equipment => ' +JSON.stringify(equipment));
@@ -142,13 +143,13 @@ class CreateEquipmentCompenent extends Component {
           <div className="text-center">
             <img src = {require('./logoA.jpg')} width="72" height="72" alt="logo" />
           </div>
-        <h1 className="text-center">OPD Equipment suppliment</h1>
+        <h1 className="text-center h1C" >OPD Equipment suppliment</h1>
         <div className = "card-body" >
           <form onSubmit={this.handleSubmit} noValidate >
             
           <div className = "form-group">
-            <label>Item Name :</label><br/>
-            <input 
+            <label className="labelC">Item Name :</label><br/>
+            <input className="inputC"
               type="text" 
               value={this.state.eqName} 
               name="eqName" 
@@ -164,8 +165,8 @@ class CreateEquipmentCompenent extends Component {
             <div className = "form-group">
             
 
-            <label>Storage :</label><br/>
-            <input 
+            <label className="labelC">Storage :</label><br/>
+            <input className="inputC"
               type="text" 
               value={this.state.estorage} 
               name="estorage" 
@@ -177,8 +178,8 @@ class CreateEquipmentCompenent extends Component {
              <span className='error'>{formErrors.estorage}</span>}
             </div>
             <div className = "form-group">
-          <label>Unit price</label><br/>
-          <input 
+          <label className="labelC">Unit price</label><br/>
+          <input className="inputC"
             type="number" 
             step="100"
             pattern="[0-9]*"
@@ -191,8 +192,8 @@ class CreateEquipmentCompenent extends Component {
              <span className='error'>{formErrors.euprice}</span>}
         </div>
         <div className = "form-group">
-          <label>Quantity :</label><br/>
-          <input 
+          <label className="labelC">Quantity :</label><br/>
+          <input className="inputC"
              type="number" 
              pattern="[0-9]*[.]?[0-9]+"
              step="25"
@@ -204,8 +205,8 @@ class CreateEquipmentCompenent extends Component {
           
         </div>
         <div className = "form-group">
-          <label>Brand :</label><br/>
-          <input 
+          <label className="labelC">Brand :</label><br/>
+          <input className="inputC"
             type="text" 
             value={this.state.etrade} 
             name="etrade"
@@ -216,8 +217,8 @@ class CreateEquipmentCompenent extends Component {
          <div className = "form-group">
               <br></br>
               <h5 >Date details</h5>
-            <label>Received Date :</label>
-            <input 
+            <label className="labelC">Received Date :</label>
+            <input className="inputC"
               type="Date" 
               value={this.state.e_IS_Date} 
               name="e_IS_Date" 
@@ -226,8 +227,8 @@ class CreateEquipmentCompenent extends Component {
             />
         </div>
         <div className = "form-group">
-            <label>Expiration Date :</label>
-            <input 
+            <label className="labelC">Expiration Date :</label>
+            <input className="inputC"
               type="Date" 
               value={this.state.e_Ex_Date} 
               name="e_Ex_Date" 
@@ -237,7 +238,7 @@ class CreateEquipmentCompenent extends Component {
         </div>
           <br></br>
         
-          <button type="Submit" className="btn btn-success" onClick={this.handleSubmit}>Submit</button>
+          <button type="Submit" className="btn btn-success buttonC" onClick={this.handleSubmit}>Submit</button>
         
           </form>
           </div>

@@ -12,7 +12,7 @@ class DashboardMain extends Component {
 
     render() {
         return (
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div>
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard</h1>
                 </div>
@@ -21,7 +21,7 @@ class DashboardMain extends Component {
                     <br/><br/><br/><br/>
                     <h1>Welcome to the Dashboard!!<br/>St. Anne's Medical Center</h1>
                 </div>
-            </main>
+            </div>
         );
     }
 }
