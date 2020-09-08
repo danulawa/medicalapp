@@ -23,7 +23,9 @@ class DashboardLayout extends Component {
                     <div className = "container-fluid">
                         <div className = "row">
                             <SideBarComponent/>
+                            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                                 {this.props.children}
+                            </main>
                         </div>
                     </div>
             </Router>
