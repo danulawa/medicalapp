@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import EquipmentService from '../services/EquipmentService';
-//import '../App.css';
+import EquipmentService from '../../../Services/EquipmentService';
 
 const validateForm = (formErrors) => {
     let valid = true;
@@ -64,7 +63,7 @@ class CreateEquipmentCompenent extends Component {
           console.log('equipment => ' +JSON.stringify(equipment));
             
           EquipmentService.createEquipment(equipment).then(res =>{
-              this.props.history.push('/equipment');
+              this.props.history.push('/opd/equipment');
           });
         }
         changeNamehandler = (event) => {

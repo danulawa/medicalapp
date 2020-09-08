@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EquipmentService from '../services/EquipmentService';
+import EquipmentService from '../../../Services/EquipmentService';
 
 class ListEquipmentComponent extends Component {
     constructor(props){
@@ -25,11 +25,11 @@ class ListEquipmentComponent extends Component {
     }
 
     editEquipment(eqId){
-        this.props.history.push(`/update-equipment/${eqId}`);
+        this.props.history.push(`/opd/update-equipment/${eqId}`);
     }
 
     printDetails(eqId){
-        this.props.history.push(`/print-details/${eqId}`)
+        this.props.history.push(`/opd/print-details/${eqId}`)
     }
     componentDidMount(){
         EquipmentService.getEquipment().then((res) =>{
@@ -38,7 +38,7 @@ class ListEquipmentComponent extends Component {
     }
 
     addEquipment(){
-        this.props.history.push('/add-equipment');
+        this.props.history.push('/opd/add-equipment');
     }
 
 

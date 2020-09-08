@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EquipmentService from '../services/EquipmentService';
+import EquipmentService from '../../../Services/EquipmentService';
 
 class UpdateEquipmentComponent extends Component {
     constructor(props){
@@ -41,7 +41,7 @@ class UpdateEquipmentComponent extends Component {
         console.log('equipment => ' +JSON.stringify(equipment));
       
         EquipmentService.updateEquipment(equipment, this.state.eqId).then(res =>{
-            this.props.history.push('/equipment');
+            this.props.history.push('/opd/equipment');
         });
       }
       changeNamehandler = (event) => {

@@ -1,5 +1,6 @@
 import axios from 'axios';
 const DRUG_API_BASE_URL = "http://localhost:8080/api/v1/drug";
+export const DRUG = "http://localhost:8080/api/v1/drug";
 
 class DrugService {
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
+import '../CSS/SignIn.css';
 
-class MainLayout extends Component {
+class OtherLayout extends Component {
     constructor(props){
         super(props)
 
@@ -22,4 +23,4 @@ class MainLayout extends Component {
     }
 }
 
-export default MainLayout;
+export default OtherLayout;

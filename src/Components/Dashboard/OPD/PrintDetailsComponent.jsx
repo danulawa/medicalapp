@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import EquipmentService from '../services/EquipmentService';
-
-
+import EquipmentService from '../../../Services/EquipmentService';
 
 class PrintDetailsComponent extends Component {
     constructor(props){

@@ -29,8 +29,8 @@ class SideBarComponent extends Component {
                     <li class = "nav-item dropdown">
    				        <a href="#opdDrop" data-toggle="collapse" aria-expanded="false" class = "nav-link dropdown-toggle">OPD</a>
    				        <ul class="collapse list-unstyled" id="opdDrop">
-   					        <li> <a class = "dropdown-item" href="#">All Services</a> </li>
-                            <li> <a class = "dropdown-item" href="#">Billing</a> </li>
+   					        <li> <a class = "dropdown-item" href="/opd/equipment">All Equipments</a> </li>
+                            <li> <a class = "dropdown-item" href="/opd/add-equipment">New Equipment</a> </li>
                             <li> <a class = "dropdown-item" href="#">Payments</a> </li>
    				        </ul> 
    			        </li>
@@ -56,6 +56,15 @@ class SideBarComponent extends Component {
    					        <li> <a class = "dropdown-item" href="/finance/add-utility">New Utility Payment</a> </li>
                             <li> <a class = "dropdown-item" href="/finance/all-utility">All Utility Payments</a> </li>
                             <li> <a class = "dropdown-item" href="/finance/utility-bill">Utility Report</a> </li>
+   				        </ul>
+   			        </li>
+                    <li class = "nav-item dropdown">
+   				        <a href="#extDrop" data-toggle="collapse" aria-expanded="false" class = "nav-link dropdown-toggle">External Users</a>
+   				        <ul class="collapse list-unstyled" id="extDrop">
+   					        <li> <a class = "dropdown-item" href="/extuser/add-patient">New Patient</a> </li>
+                            <li> <a class = "dropdown-item" href="/extuser/patients">All Patients</a> </li>
+                            <li> <a class = "dropdown-item" href="#">New Supplier</a> </li>
+                            <li> <a class = "dropdown-item" href="#">All Suppliers</a> </li>
    				        </ul>
    			        </li>
                 </ul>
