@@ -32,11 +32,12 @@ class UpdateEmployeeComponent extends Component {
     componentDidMount(){
         EmployeeService.getEmployeeById(this.state.id).then( (res) =>{
             let employee = res.data;
-            this.setState({Fullname: employee.Fullname,
+            this.setState({fullName: employee.fullName,
                     nic: employee.nic,
                     dateofbirth : employee.dateofbirth,
                     department : employee.department,
                     desination : employee.desination,
+                    contactnumber : employee.contactnumber,
                     address : employee.address,
                     email : employee.email,
                     registrationdate : employee.registrationdate,
@@ -46,7 +47,7 @@ class UpdateEmployeeComponent extends Component {
 
     updateEmployee = (e) => {
         e.preventDefault();
-        let employee = {Fullname: this.state.Fullname, nic: this.state.nic, dateofbirth: this.state.dateofbirth,department: this.state.department,desination: this.state.desination,address: this.state.address,email: this.state.email,registrationdate: this.state.registrationdate};
+        let employee = {fullName: this.state.fullName, nic: this.state.nic, dateofbirth: this.state.dateofbirth,department: this.state.department,desination: this.state.desination,contactnumber: this.state.contactnumber,address: this.state.address,email: this.state.email,registrationdate: this.state.registrationdate};
         console.log('employee => ' + JSON.stringify(employee));
         console.log('id => ' + JSON.stringify(this.state.id));
         EmployeeService.updateEmployee(employee, this.state.id).then( res => {
@@ -55,7 +56,7 @@ class UpdateEmployeeComponent extends Component {
     }
     
     changeFullNameHandler= (event) => {
-        this.setState({Fullname: event.target.value});
+        this.setState({fullName: event.target.value});
     }
 
     changeNICHandler= (event) => {
@@ -75,19 +76,19 @@ class UpdateEmployeeComponent extends Component {
     }
 
     changeContactNumberHandler= (event) => {
-        this.setState({address: event.target.value});
+        this.setState({contactnumber: event.target.value});
     }
 
     changeAddressHandler= (event) => {
-        this.setState({email: event.target.value});
+        this.setState({address: event.target.value});
     }
 
     changeEmailHandler= (event) => {
-        this.setState({registrationdate: event.target.value});
+        this.setState({email: event.target.value});
     }
 
     changeRegistrationDateHandler= (event) => {
-        this.setState({firstName: event.target.value});
+        this.setState({registrationdate: event.target.value});
     }
     cancel(){
         this.props.history.push('/intuser/employees');

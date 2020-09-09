@@ -41,11 +41,12 @@ class CreateEmployeeComponent extends Component {
         }else{
             EmployeeService.getEmployeeById(this.state.id).then( (res) =>{
                 let employee = res.data;
-                this.setState({Fullname: employee.Fullname,
+                this.setState({fullName: employee.fullName,
                     nic: employee.nic,
                     dateofbirth : employee.dateofbirth,
                     department : employee.department,
                     desination : employee.desination,
+                    contactnumber:employee.contactnumber,
                     address : employee.address,
                     email : employee.email,
                     registrationdate : employee.registrationdate,
@@ -56,7 +57,7 @@ class CreateEmployeeComponent extends Component {
     }
     saveOrUpdateEmployee = (e) => {
         e.preventDefault();
-        let employee = {Fullname: this.state.Fullname, nic: this.state.nic, dateofbirth: this.state.dateofbirth,department: this.state.department,desination: this.state.desination,address: this.state.address,email: this.state.email,registrationdate: this.state.registrationdate};
+        let employee = {fullName: this.state.fullName, nic: this.state.nic, dateofbirth: this.state.dateofbirth,department: this.state.department,desination: this.state.desination,address: this.state.address,email: this.state.email,registrationdate: this.state.registrationdate};
         console.log('employee => ' + JSON.stringify(employee));
 
         // step 5
@@ -72,7 +73,7 @@ class CreateEmployeeComponent extends Component {
     }
     
     changeFullNameHandler= (event) => {
-        this.setState({Fullname: event.target.value});
+        this.setState({fullName: event.target.value});
     }
 
     changeNICHandler= (event) => {
@@ -92,19 +93,19 @@ class CreateEmployeeComponent extends Component {
     }
 
     changeContactNumberHandler= (event) => {
-        this.setState({address: event.target.value});
+        this.setState({contactnumber: event.target.value});
     }
 
     changeAddressHandler= (event) => {
-        this.setState({email: event.target.value});
+        this.setState({address: event.target.value});
     }
 
     changeEmailHandler= (event) => {
-        this.setState({registrationdate: event.target.value});
+        this.setState({email: event.target.value});
     }
 
     changeRegistrationDateHandler= (event) => {
-        this.setState({firstName: event.target.value});
+        this.setState({registrationdate: event.target.value});
     }
 
     cancel(){
@@ -154,8 +155,8 @@ class CreateEmployeeComponent extends Component {
                                         </div>
 
                                         <div className = "form-group">
-                                            <label> Desination: </label>
-                                            <input placeholder="Desination" name="desination" className="form-control" 
+                                            <label> Designation: </label>
+                                            <input placeholder="Designation" name="desination" className="form-control" 
                                                 value={this.state.desination} onChange={this.changeDesinationHandler}/>
                                         </div>
 
